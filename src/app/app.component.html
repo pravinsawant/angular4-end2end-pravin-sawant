@@ -1,0 +1,25 @@
+<!-- <h1>{{'Hello ' + name}}</h1>
+<h1 [textContent]='name'></h1>
+<h1>{{5 + no}}</h1> -->
+
+<div class="navbar">
+  <a routerLink="home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Customer Management
+    </button>
+    <div class="dropdown-content">
+      <a routerLink="/customer-listing">Customer Listing</a>
+      <a routerLink="/new-customer">New Customer</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Asset Management
+    </button>
+    <div class="dropdown-content">
+      <a routerLink="transaction-listing">Transaction Listing</a>
+      <a routerLink="add-transaction">Add Transaction</a>
+    </div>
+  </div>
+</div>
+<br>
+<router-outlet></router-outlet>

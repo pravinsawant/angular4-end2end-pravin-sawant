@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Phone</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let customer of customers">
+      <td>{{customer.Id}}</td>
+      <td>
+        <a [routerLink]="['/transaction-listing', customer.Name]" (click)="onCustNameClick(customer)" >
+          {{customer.Name}}
+        </a>
+      </td>
+      <td>{{customer.City | uppercase}}</td>
+      <td>{{customer.Phone | cityCode:customer.City}}</td>
+
+      <td><a (click)="onDeleteClick(customer.Id)">X</a></td>
+    </tr>
+    <tr *ngIf="!customers || customers.length == 0">
+      <td colspan="6">No records found</td>
+    </tr>
+  </tbody>
+</table>
+<div id="selectedRecord">
+  <label id="selectedRecordDisplay" [innerText]='selectedText'></label>
+</div>

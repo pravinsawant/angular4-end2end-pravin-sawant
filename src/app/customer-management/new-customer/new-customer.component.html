@@ -1,0 +1,58 @@
+<form ngform #newCustomerForm="ngForm" (ngSubmit)="save(newCustomerForm)">
+  <div>
+    <label for="custName">Name : </label>
+    <input
+        required
+        ngModel
+        name="custName" #custName="ngModel"
+        id="custName"
+        class="custName"
+        minlength="3"
+        maxlength="10"
+        pattern="pravin"
+        type="text"
+        (change)="log(custName)"
+    />
+    <div id="validationError" *ngIf="custName.touched && !custName.valid">
+        <div *ngIf="custName.errors.required">
+          Customer name is required.
+        </div>
+        <div *ngIf="custName.errors.minlength">
+          Customer name should be minimum 3 characters.
+        </div>
+        <div *ngIf="custName.errors.pattern">
+          Customer name doesn't match pattern, It has to pravin.
+        </div>
+    </div>
+  </div>
+  <div>
+    <label for="city">City - : </label>
+    <select
+        required
+        ngModel
+        name="city"
+        #city="ngModel"
+        id="city">
+        <option value="Sangli">Sangli</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Satara">Satara</option>
+    </select>
+    <div id="validationError"
+        *ngIf="!city.valid">City is required.</div>
+    </div>
+  <div>
+    <label for="phone">Phone : </label>
+    <input
+    ngModel
+    name="phone"
+    #phone="ngModel"
+    id="phone"
+    type="text"/>
+  </div>
+  <div>
+    <button [disabled]="!newCustomerForm.valid">Save</button>
+  </div>
+</form>
+<div *ngIf="isSaved">Record Added Successfully</div>
+

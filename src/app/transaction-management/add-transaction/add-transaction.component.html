@@ -1,0 +1,47 @@
+<form [formGroup] = "form" (ngSubmit)="save()">
+  <div>
+    <label for="custName">Customer Name : </label>
+    <select id="custName" formControlName = "customer">
+        <option *ngFor="let customer of customers" [value]="customer.Id">
+          {{customer.Name}}
+        </option>
+    </select>
+    <div id="validationError" *ngIf="customername.invalid">
+      Customer name is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="symbol">Symbol : </label>
+    <input
+        symbolFormat
+        formControlName="symbol"
+        id="symbol"
+        type="text">
+        <div id="validationError" *ngIf="symbol.touched && symbol.invalid">
+            <div *ngIf="symbol.errors.required">Symbol is required.</div>
+            <div *ngIf="symbol.errors.minlength">Symbol should be minimum {{symbol.errors.minlength.requiredLength}} characters.</div>
+        </div>
+  </div>
+
+  <div>
+    <label for="purchasePrice">Purchase Price : </label>
+    <input
+        formControlName="purchaseprice"
+        id="purchasePrice"
+        type="text">
+  </div>
+
+  <div>
+    <label for="shares">No of Shares : </label>
+    <input quantityFormat
+        formControlName="noofshares"
+        id="shares"
+        type="text">
+  </div>
+
+  <div>
+      <button [disabled]="!form.valid">Save</button>
+  </div>
+</form>
+<div *ngIf="isSaved">Record Added Successfully</div>

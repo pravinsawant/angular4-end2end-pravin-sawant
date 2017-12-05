@@ -1,0 +1,26 @@
+<button (click)="onRefresh()">Refresh</button>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Customer Name</th>
+      <th>Price</th>
+      <th>Symbol</th>
+      <th># Shares</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let transaction of transactions">
+      <td><a (click)="onTransactionIdClick(transaction)" >{{transaction.Id}}</a></td>
+      <td>{{transaction.CustomerName}}</td>
+      <td>{{transaction.PurchasePrice}}</td>
+      <td>{{transaction.Symbol}}</td>
+      <td>{{transaction.NoOfShares}}</td>
+      <td><a (click)="onDeleteClick(transaction.Id)">X</a></td>
+    </tr>
+    <tr *ngIf="!transactions || transactions.length == 0">
+      <td colspan="6">No records found</td>
+    </tr>
+  </tbody>
+</table>

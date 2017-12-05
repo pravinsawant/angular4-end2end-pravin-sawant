@@ -1,0 +1,26 @@
+table{
+  color : rgb(0, 148, 136);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  border-collapse: collapse;
+}
+
+td{
+  border: 1px solid #369;
+  padding: 5px;
+}
+
+th{
+  border: 1px solid #369;
+  padding: 5px;
+  background-color: lightgray;
+}
+
+a{
+  cursor: pointer;
+}
+
+#selectedRecord{
+  margin-left: 3px;
+  margin-top: 20px;
+}
