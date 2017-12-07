@@ -1,0 +1,5 @@
+C:\AllInOne\Technical\Web\Angular\Pravin\MeeupSession\PSAssetManagementWebAPI\AssetManagement\bin\Debug\AssetManagement.dll
+C:\AllInOne\Technical\Web\Angular\Pravin\MeeupSession\PSAssetManagementWebAPI\AssetManagement\bin\Debug\AssetManagement.pdb
+C:\AllInOne\Technical\Web\Angular\Pravin\MeeupSession\PSAssetManagementWebAPI\AssetManagement\obj\Debug\AssetManagement.csprojResolveAssemblyReference.cache
+C:\AllInOne\Technical\Web\Angular\Pravin\MeeupSession\PSAssetManagementWebAPI\AssetManagement\obj\Debug\AssetManagement.dll
+C:\AllInOne\Technical\Web\Angular\Pravin\MeeupSession\PSAssetManagementWebAPI\AssetManagement\obj\Debug\AssetManagement.pdb
